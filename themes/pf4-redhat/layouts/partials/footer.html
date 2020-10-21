@@ -177,8 +177,8 @@
           '<tr role="row"><td colspan="5" class="pf-u-text-align-center">Loading...</td></tr>'
         );
         jQuery.ajax({
-          type: 'POST',
-          url: '{{ .Site.Params.jigBackend }}/api/v1/find-available-events/',
+          type: 'GET',
+          url: '{{ .Site.Params.jigBackend }}/api/v1/find-available-events',
           error(data) {
             jQuery('#availableEventsListingTable tbody').html(
               '<tr role="row"><td colspan="5" class="pf-u-text-align-center">Error loading records</td></tr>'
