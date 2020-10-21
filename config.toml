@@ -10,7 +10,7 @@ metaDataFormat = "yaml"
 [params]
     description = "Tried. Tested. Trusted."
     #jigBackend = "http://localhost:8000"
-    jigBackend = "https://learn.kemo.network:8443"
+    jigBackend = "https://jig.kemo.network"
 
 [taxonomies]
     workshop = "workshops"
