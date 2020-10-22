@@ -241,10 +241,10 @@ small,
 }
 .literalblock pre > code, .literalblock pre[class] > code, .listingblock pre > code, .listingblock pre[class] > code {
   display: inline-block;
-  padding: 2rem;
+  padding: 1rem;
 }
 .listingblock pre:not(.highlight) {
-  padding:2rem;
+  padding:1rem;
 }
 .pf-c-page__main-section-content ul li p {
   display: inline;
@@ -585,4 +585,12 @@ pre .copy-to-clipboard:hover {
 *:not(pre) > code {
   padding:4px;
   background-color:#FFF7DD;
+}
+
+.literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] {
+  background-color:#121212;
+  color:#FFF;
+}
+.listingblock pre:not(.highlight) {
+  color: #FFF;
 }

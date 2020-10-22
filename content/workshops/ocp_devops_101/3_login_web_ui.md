@@ -1,5 +1,5 @@
 ---
-title: Log into the Web Ui
+title: Access the OpenShift Web UI
 workshops: ocp_devops_101
 workshop_weight: 20
 layout: lab
