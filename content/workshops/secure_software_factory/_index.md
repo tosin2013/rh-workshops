@@ -4,7 +4,7 @@ workshops: secure_software_factory
 menu:
   main:
     parent: workshops
-    pre: fa fa-play-circle
+    pre: fa fa-puzzle-piece
 ---
 
 # Description

@@ -148,7 +148,7 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 h1 small,
@@ -266,4 +266,323 @@ small,
 
 .pf-c-alert {
   margin-bottom:2rem;
+}
+
+
+/* PORTED FROM NG WORKSHOPS */
+
+figure {
+  margin: 0 0 10px;
+}
+
+h3.stepTitle {
+    border-bottom: 1px solid;
+    padding: 1rem 0;
+    margin: 1rem auto;
+    width:100%
+}
+.stepHolders {
+    width:100%;
+}
+ul.topics > li {
+    margin-left: -1rem;
+    padding: 0 1rem !important;
+    margin-right: -1rem;
+}
+ul.topics li.dd-item:hover, ul.topics li.dd-item:focus, ul.topics li.dd-item:active {
+    background: rgba(0,0,0,0.25);
+}
+.stepHolders > div:nth-child(2) {
+    font-size: 16px;
+    padding-top: 2rem;
+}
+
+.tabcontainer {
+    border: 1px solid #333;
+}
+.tabcontainer .tabbuttons {
+    background: #333;
+    padding:3px 3px 0;
+
+}
+.tabcontainer .tabbuttons button {
+    padding:0.5rem 1rem;
+    margin:2px 2px 0;
+    background-color: #CCC;
+}
+.tabcontainer .tabbuttons button:hover {
+    background-color: #eee;
+}
+.tabcontainer .tabbuttons button.active {
+    background-color:#FFF;
+    color:#000;
+    font-weight: bold;
+    outline: none;
+}
+
+.figImageHolder figure.kemo-figure.img-figure {
+    display: none;
+}
+.figImageHolder figure.kemo-figure.img-figure.active {
+    display: block;
+}
+
+pre.newline code > span::before {
+    content: "$";
+    padding-right: 8px;
+}
+pre.newline code > span {
+    display: block;
+}
+.tabcontainer .tabbuttons .w3-close-button {
+    float: right;
+    display:none;
+}
+.tabcontainer .tabbuttons.hasOpen .w3-close-button {
+    display:block;
+}
+.tabcontainer .tab_item {
+    display:none;
+}
+.tabcontainer .tab_item.open {
+    display:block !important;
+    padding:1rem;
+}
+
+.tabcontainer .w3-btn, .tabcontainer .w3-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.tabcontainer .w3-display-topright {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.tabcontainer .w3-large {
+    font-size: 18px!important;
+}
+
+figure.img-figure.kemo-figure {
+    border: 5px solid white;
+    box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.125);
+    transition: 0.2s all;
+    margin:1rem auto 2rem;
+    max-width: 100%;
+    width: fit-content;
+    text-align: center;
+}
+figure.img-figure.kemo-figure figcaption {
+    text-align: center;
+    margin: 0rem;
+    background: #FAFAFA;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+#seatConfigForm input, #seatConfigForm select{
+    width:100%;
+    color:#000;
+    border-radius: 0;
+    padding:0.5rem;
+    margin-bottom:1rem;
+}
+
+.btn-blue {
+    background:var(--MENU-HEADER-BG-color);
+    color:#FFFFFF !important;
+}
+
+figure.img-figure.kemo-figure img {
+    margin:0.5rem auto !important;
+}
+figure.img-figure.kemo-figure:hover {
+    box-shadow:0px 3px 7px 0px rgba(0,0,0,0.25);
+}
+.figCountWideHolder {
+    width:100%;
+    float:left;
+}
+.figImageHolder figure.img-figure.kemo-figure {
+    margin:1rem auto 2rem;
+}
+.figCountWideHolder .figCountHolder {
+    margin:1rem auto;
+    width: fit-content;
+}
+.figCountHolder div {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    margin:0.5rem;
+    cursor: pointer;
+    float: left;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 100%);
+}
+.figCountHolder div.active {
+  width: 25px;
+  height: 25px;
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    margin:0.5rem;
+    float: left;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.5) 100%);
+}
+ol, ul {
+  margin: 0 0 2rem 2rem;
+}
+
+
+section.attachments {
+  margin: 2rem 0;
+  position: relative;
+}
+
+section.attachments label {
+  font-weight: 400;
+  padding-left: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  width:100%;
+  display: inline-block;
+}
+
+section.attachments .attachments-files {
+  padding: 15px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #666;
+}
+
+section.attachments.orange label {
+  color: #fff;
+  background: #F0B37E;
+}
+
+section.attachments.orange .attachments-files {
+  background: #FFF2DB;
+}
+
+section.attachments.green label {
+  color: #fff;
+  background: rgba(92, 184, 92, 0.8);
+}
+
+section.attachments.green .attachments-files {
+  background: #E6F9E6;
+}
+
+section.attachments.blue label {
+  color: #fff;
+  background: #6AB0DE;
+}
+
+section.attachments.blue .attachments-files {
+  background: #E7F2FA;
+}
+
+section.attachments.grey label {
+  color: #fff;
+  background: #505d65;
+}
+
+section.attachments.grey .attachments-files {
+  background: #f4f4f4;
+}
+ul li, ol li {
+  margin: 1rem 0.5rem;
+}
+li ol, li ul {
+  margin: 0 1rem;
+  padding-bottom: 0 !important;
+}
+
+code, kbd, pre, samp {
+  font-family: "Consolas", menlo, monospace;
+  font-size: 92%;
+}
+code {
+  border-radius: 2px;
+  white-space: nowrap;
+  color: #5e5e5e;
+  background: #FFF7DD;
+  border: 1px solid #fbf0cb;
+  padding: 0px 2px;
+}
+code + .copy-to-clipboard {
+  margin-left: -1px;
+  border-left: 0 !important;
+  font-size: inherit !important;
+  vertical-align: middle;
+  height: 21px;
+  top: 0;
+}
+pre {
+  padding: 1rem;
+  margin: 2rem 0;
+  background: #282c34;
+  border: 0;
+  border-radius: 2px;
+  line-height: 1.15;
+}
+pre code {
+  color: whitesmoke;
+  background: inherit;
+  white-space: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+.copy-to-clipboard {
+  background-image: url(/img/clippy.svg);
+  background-position: 50% 50%;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 1.45rem;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  color: #5e5e5e;
+  background-color: #FFF7DD;
+  margin-left: -.2rem;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+  margin-bottom: 1px;
+}
+.copy-to-clipboard:hover {
+  background-color: #E8E2CD;
+}
+pre .copy-to-clipboard {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  background-color: #949bab;
+  color: #ccc;
+  border-radius: 2px;
+}
+pre .copy-to-clipboard:hover {
+  background-color: #656c72;
+  color: #fff;
+}
+*:not(pre) > code {
+  padding:4px;
+  background-color:#FFF7DD;
 }

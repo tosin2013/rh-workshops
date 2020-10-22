@@ -1,0 +1,10 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<section class='relatedAssets attachments {{ with .Get "style"}}{{.}}{{ end }}'>
+  <label>
+    <i class="fas fa-paperclip" aria-hidden="true"></i>
+    {{with .Get "title"}}{{.}}{{else}}Related Assets{{end}}
+  </label>
+  <div class="attachments-files">
+    {{.Inner}}
+    <div>
+</section>

@@ -1,0 +1,26 @@
+<li>
+  {{if .Get "specialLink"}}
+  {{ $specialLInk := .Get "specialLink" }}
+  {{ if (eq $specialLInk "ocpCluster")}}
+  <a href="https://VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN/"
+    data-original-href="https://VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN/" class="generatedLink">
+    <strong>{{with .Get "title"}}{{.}}{{else}}https://VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN/{{end}}</strong>
+  </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
+    data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  {{ end }}
+  {{ if (eq $specialLInk "gitlabVM")}}
+  <a href="https://gitlab.VAR_REP_WORKSHOP_DOMAIN/" data-original-href="https://gitlab.VAR_REP_WORKSHOP_DOMAIN/"
+    class="generatedLink">
+    <strong>{{with .Get "title"}}{{.}}{{else}}https://gitlab.VAR_REP_WORKSHOP_DOMAIN/{{end}}</strong>
+  </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
+    data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  {{ end }}
+  {{else}}
+  <a href="{{ .Get "href" }}">
+    {{with .Get "title"}}{{.}}{{else}}{{.Get "href"}}{{end}}
+  </a>
+  {{with .Inner}}{{.}}{{end}}
+  {{end}}
+</li>

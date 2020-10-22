@@ -154,10 +154,106 @@ function logStudentOut() {
   }
 }
 
+function replaceClassText() {
+  console.log('Replacing span text for seat configuration...');
+  console.log('Setting Student Number: ' + Cookies2.get("userid"));
+  console.log('Setting Workshop Domain: ' + Cookies2.get("domain"));
+  console.log('Setting Workshop ID: ' + Cookies2.get("prefix"));
+  jQuery("span.domain").html(Cookies2.get("domain"));
+  jQuery("span.userid").html(Cookies2.get("userid"));
+  jQuery("span.prefix").html(Cookies2.get("prefix"));
+}
+
+function replacementSwitch(inputTxt) {
+  switch (inputTxt) {
+    case "VAR_REP_WORKSHOP_ID":
+      return Cookies2.get("prefix")
+    case "VAR_REP_WORKSHOP_DOMAIN":
+      return Cookies2.get("domain")
+    case "VAR_REP_STUDENT_NUMBER":
+      return Cookies2.get("userid")
+  }
+}
+
+function generatedFigureGroups() {
+  jQuery('.figureImageSet.unbuilt').each(function(index, element) {
+    //var figureCount = jQuery(element).find('figure.kemo-figure').length;
+
+    jQuery(element).find('figure.kemo-figure').each(function (iindex, eelement) {
+      jQuery(eelement).attr('data-fc-index-num', index);
+      jQuery(eelement).attr('data-f-index-num', iindex);
+      jQuery(element).find('.figCountHolder').append('<div data-fig-id="' + iindex +'"></div>');
+    });
+    jQuery(element).find('figure.kemo-figure').first().addClass('active');
+    jQuery('.figureImageSet .figCountHolder').find(">:first-child").addClass('active');
+    
+    jQuery(element).removeClass('unbuilt');
+  });
+  jQuery('.figureImageSet .figCountHolder').on('click', 'div', function(e) {
+    e.preventDefault();
+    jQuery(this).parent().parent().parent().parent().find('.figCountHolder div, .figureImageSet figure').removeClass('active');
+    jQuery(this).addClass('active');
+    var fID = jQuery(this).attr('data-fig-id');
+    jQuery(this).parent().parent().parent().find('.figImageHolder figure[data-f-index-num="' + fID +'"]').addClass('active');
+  });
+}
+
+function generatedTabs() {
+  jQuery('.tabcontainer.unbuilt').each(function(index, element) {
+    jQuery(element).find('.tab_item').each(function (iindex, eelement) {
+      jQuery(eelement).attr('data-tc-index-num', index);
+      jQuery(eelement).attr('data-t-index-num', iindex);
+      var tab_title = jQuery(eelement).attr('data-title');
+      jQuery(element).find('.tabbuttons').append('<button class="w3-bar-item w3-button" data-t-id="' + iindex + '" data-tc-id="' + index + '">' + tab_title + '</button>');
+    });
+    jQuery(element).find('.tabbuttons').append('<button class="w3-bar-item w3-button w3-close-button">X</button>');
+    jQuery(element).removeClass('unbuilt');
+  });
+  jQuery('.tabcontainer').on('click', '.tabbuttons button', function(e) {
+    e.preventDefault();
+    var tID = jQuery(this).attr('data-t-id');
+    var tcID = jQuery(this).attr('data-tc-id');
+    jQuery(this).parent().addClass('hasOpen');
+    jQuery('.tabcontainer .tabbuttons button[data-tc-id="'+ tcID +'"]').removeClass('active');
+    jQuery(this).addClass('active');
+    jQuery('.tabcontainer .tabcontent .tab_item[data-tc-index-num="'+ tcID +'"]').removeClass('open');
+    jQuery('.tabcontainer .tabcontent .tab_item[data-tc-index-num="'+ tcID +'"][data-t-index-num="'+ tID +'"]').addClass('open');
+  });
+  jQuery('.tabcontainer').on('click', '.w3-close-button', function(e) {
+    e.preventDefault();
+    jQuery(this).parent().children().removeClass('active');
+    jQuery(this).parent().parent().find('.tabcontent .tab_item.open').removeClass('open');
+    jQuery(this).parent().removeClass('hasOpen');
+    jQuery(this).removeClass('active');
+  });
+}
+
 jQuery(document).ready(function() {
   readCookiesAndSetVisual();
+  replaceClassText();
+  generatedFigureGroups();
+  generatedTabs();
   jQuery('.mainWorkshopListing .pf-l-grid__item').click(function(event) {
     window.location.href = jQuery('a.view-workshop-url', this).attr('href');
+  });
+  
+  jQuery(".generatedText, .generatedLink").each(function(index, element) {
+    var searchBody = jQuery(element).html();
+    var searchHref = jQuery(element).attr('data-original-href');
+    var searchText = jQuery(element).attr('data-original-text');
+    jQuery(element).html(searchBody.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER/gi, function(x) {
+      return replacementSwitch(x);
+    }));
+    if (searchHref) {
+      jQuery(element).attr('href', searchHref.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER/gi, function(x) {
+        return replacementSwitch(x);
+      }));
+    }
+    if (searchText) {
+      jQuery(element).text(searchText.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER/gi, function(x) {
+        return replacementSwitch(x);
+      }));
+    }
   });
 
   jQuery(function() {
@@ -190,5 +286,45 @@ jQuery(document).ready(function() {
   $('.pf-c-page__sidebar-body').slimScroll({
     height: '100%',
     width: 'var(--pf-c-page__sidebar--Width)',
+  });
+
+  // clipboard
+  var clipInit = false;
+  jQuery('code').each(function() {
+      var code = $(this),
+          text = code.text();
+
+      if (text.length > 5) {
+          if (!clipInit) {
+              var text, clip = new ClipboardJS('.copy-to-clipboard', {
+                  text: function(trigger) {
+                      text = $(trigger).prev('code').text();
+                      return text.replace(/^\$\s/gm, '');
+                  }
+              });
+
+              var inPre;
+              clip.on('success', function(e) {
+                  e.clearSelection();
+                  inPre = $(e.trigger).parent().prop('tagName') == 'PRE';
+                  $(e.trigger).attr('aria-label', 'Copied to clipboard!').addClass('tooltipped tooltipped-' + (inPre ? 'w' : 's'));
+              });
+
+              clip.on('error', function(e) {
+                  inPre = $(e.trigger).parent().prop('tagName') == 'PRE';
+                  $(e.trigger).attr('aria-label', fallbackMessage(e.action)).addClass('tooltipped tooltipped-' + (inPre ? 'w' : 's'));
+                  $(document).one('copy', function(){
+                      $(e.trigger).attr('aria-label', 'Copied to clipboard!').addClass('tooltipped tooltipped-' + (inPre ? 'w' : 's'));
+                  });
+              });
+
+              clipInit = true;
+          }
+
+          code.after('<span class="copy-to-clipboard" title="Copy to clipboard" />');
+          code.next('.copy-to-clipboard').on('mouseleave', function() {
+              $(this).attr('aria-label', null).removeClass('tooltipped tooltipped-s tooltipped-w');
+          });
+      }
   });
 });

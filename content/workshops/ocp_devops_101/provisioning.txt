@@ -1,0 +1,8 @@
+Steps to provision this workshop:
+
+1. Deploy OCP 4
+2. Deploy GitLab - https://github.com/kenmoini/gitlab-workshop-deployer
+3. Integrate both with LDAP - https://github.com/kenmoini/freeipa-workshop-deployer
+4. As kubeadmin, add the workshop-terminal template to the `openshift` namespace: https://raw.githubusercontent.com/kenmoini/workshop-terminal/develop/templates/production.json
+5. As kubeadmin, add the openshift-coder-infused template to the `openshift` namespace: https://raw.githubusercontent.com/kenmoini/openshift-coder-infused/master/openshift-template.json
+6. Create a DevOps on OpenShift workshop event in Jig

@@ -4,7 +4,7 @@ workshops: rhel_8
 menu:
   main:
     parent: workshops
-    pre: fa fa-magic
+    pre: fa fa-linux
 ---
 
 :domain_name: redhatgov.io

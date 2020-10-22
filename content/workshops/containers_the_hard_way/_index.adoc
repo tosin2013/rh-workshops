@@ -4,7 +4,7 @@ workshops: containers_the_hard_way
 menu:
   main:
     parent: workshops
-    pre: fa fa-linux
+    pre: fa fa-bars
 ---
 
 :badges:

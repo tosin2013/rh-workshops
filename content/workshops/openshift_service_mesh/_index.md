@@ -4,7 +4,7 @@ workshops: openshift_service_mesh
 menu:
   main:
     parent: workshops
-    pre: fa fa-th
+    pre: fa fa-connectdevelop
 ---
 
 # OpenShift Service Mesh

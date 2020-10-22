@@ -7,11 +7,17 @@ menu:
     pre: fa fa-code-fork
 ---
 
-# OpenShift 4 101
+# DevOps on Red Hat OpenShift Container Platform
 
 ## Description 
 
-This workshop will have you deploying and creating native docker images for a Node.js based website and learning to leverage the power of OpenShift 4 to build, deploy, scale, and automate.
+Getting up and running with Kubernetes can be tough - there are a few reasons why [Kelsey Hightower's](https://twitter.com/kelseyhightower) [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) is infamous.
+
+Kubernetes doesn't have to be difficult though, and it doesn't have to come with the vendor lock-in of the hyperscalar cloud managed solutions.
+
+In this workshop you will be working with Red Hat's [OpenShift Container Platform](https://www.openshift.com/), a secure enterprise Kubernetes distribution ready for the hybrid cloud.
+
+You will start by deploying a container from [Quay](https://quay.io/), and creating native container images straight from source code with no modifications, utilizing DevOps CI/CD pipelines, and learning to leverage the power of OpenShift 4 to build, deploy, scale, and automate.
 
 ## Who should attend
 
@@ -21,30 +27,21 @@ This workshop will have you deploying and creating native docker images for a No
 - Technical leads
 - Operations Engineers
 
-
 ## What you will learn
 
-- S2I
-- Rollback Replication and Recovery
-- Using Labels
-- CI/CD pipeline
-- Blue/Green Deployment
-
-
-## Introduction
-Welcome to the workshop! This particular workshop will have you deploying with native docker images as well as using OpenShift to create docker images for a Node.js based website. You will also be leveraging the power of OpenShift to build, deploy, scale, and automate.
-
-If you are on-site with us, the instructor will walk you through and kick off each lab.  Otherwise, if you're running this on your own, just go through the list of labs below in order (as some build off of each other).
-
+- Deploying Pre-built Containers
+- Source2Image (S2I)
+- Basic Git Workflows
+- CI/CD pipelines driven by GitLab
 
 ## Labs
 
-{{< labs openshift_4_101 >}}
+{{< labs ocp_devops_101 >}}
 
 <br>
 
 {{% alert info %}}
-These labs have been tailored for OpenShift v4.3
+These labs have been tailored for OpenShift v4.5
 {{% /alert %}}
 
 {{< importPartial "footer/footer.html" >}}

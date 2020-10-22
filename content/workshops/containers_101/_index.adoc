@@ -4,7 +4,7 @@ workshops: containers_101
 menu:
   main:
     parent: workshops
-    pre: fa fa-linux
+    pre: fa fa-archive
 ---
 
 :badges:
