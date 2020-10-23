@@ -43,5 +43,3 @@ You will start by deploying a container from [Quay](https://quay.io/), and creat
 {{% alert info %}}
 These labs have been tailored for OpenShift v4.5
 {{% /alert %}}
-
-{{< importPartial "footer/footer.html" >}}
