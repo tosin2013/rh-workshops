@@ -70,6 +70,7 @@ All Projects/Namespaces in a Kubernetes/OpenShift cluster must have unique names
 
 <p>The items from the <strong>Service Catalog</strong> are just <strong>Templates</strong> in the default <em>`openshift`</em> <strong>Project</strong>.  For the purposes of this workshop, there are additional prepared Templates to quickly deploy tools and services.</p>
 <ol>
+  <li>Ensure there are no <strong>Type</strong> checkboxes enabled that filter and limit your selection</li>
   <li>Type <em>workshop</em> into the Search box, or scroll down until it is found</li>
   <li>Choose the <strong>Workshop IDE</strong> Template item from the available options by clicking on it</li>
   <li>Click <strong>Instantiate Template</strong></li>
