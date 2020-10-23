@@ -78,7 +78,7 @@ While we won't be diving deep into Branching Strategies, Pull Requests, and othe
         {{< figureImage src="../img/coderOCLogin.jpg" title="Log into the OpenShift cluster" >}}
         {{< figureImage src="../img/coderOCNewProject.jpg" title="Create a new Project" >}}
         {{< figureImage src="../img/coderOCCreateSecret.jpg" title="Make a Secret with the SSH Key generated earlier so OpenShift can access your repo" >}}
-        {{< figureImage src="../img/coderOCNewProject.jpg" title="Create a new Application with the Docker Build Strategy" >}}
+        {{< figureImage src="../img/coderOCNewApp.jpg" title="Create a new Application with the Docker Build Strategy" >}}
         {{< figureImage src="../img/coderOCSetBuildSecret.jpg" title="Associate the Builder with the SSH Key Secret" >}}
         {{< figureImage src="../img/coderOCStartBuild.jpg" title="Start a new Build of the application" >}}
         {{< figureImage src="../img/coderOCExposeService.jpg" title="Expose the Service with a Route" >}}
