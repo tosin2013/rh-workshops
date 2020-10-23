@@ -7,7 +7,7 @@ layout: lab
 
 {{< related_assets style="grey pf-u-mt-0" >}}
   {{< related_asset title="OpenShift Cluster" specialLink="ocpCluster" >}}{{< /related_asset >}}
-  {{< related_asset title="GitLab SCM" specialLink="gitlabVM" >}}{{< /related_asset >}}
+  {{< related_asset title="GitLab SCM" specialLink="gitlabVMOnKemoNetwork" >}}{{< /related_asset >}}
 {{< /related_assets >}}
 
 Now that we have our own Forked repo, we can make modifications, test new functions, and collaborate easier with others.
@@ -82,7 +82,7 @@ While we won't be diving deep into Branching Strategies, Pull Requests, and othe
     {{< rightStep size="5" >}}
 
 <ol>
-  <li>In the Cloud IDE terminal, run the following command to log into the OpenShift cluster via the CLI:<br /><code class="generatedText">oc login VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN</code></li>
+  <li>In the Cloud IDE terminal, run the following command to log into the OpenShift cluster via the CLI:<br /><code class="generatedText">oc login api.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN:6443</code></li>
   <li>Create a new Project:<br /><code class="generatedText">oc new-project teleprompter-VAR_REP_STUDENT_NUMBER</code></li>
   <li>Provide your SSH Key to OpenShift as a Secret so it can clone your fork:<br /><code>oc create secret generic repo-at-gitlab --from-file=ssh-privatekey=/home/coder/.ssh/id_rsa --type=kubernetes.io/ssh-auth</code></li>
   <li>Create a new Application using the Dockerfile Build Strategy:<br /><code class="generatedText">oc new-app git@gitlab.VAR_REP_WORKSHOP_DOMAIN:studentVAR_REP_STUDENT_NUMBER/teleprompter.git --name teleprompter --strategy=docker</code></li>

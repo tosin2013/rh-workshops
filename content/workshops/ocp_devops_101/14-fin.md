@@ -1,7 +1,7 @@
 ---
-title: Webhook Triggers
+title: Fin
 workshops: ocp_devops_101
-workshop_weight: 65
+workshop_weight: 75
 layout: lab
 ---
 

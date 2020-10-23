@@ -25,6 +25,14 @@
     data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
   &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
   {{ end }}
+  {{ if (eq $specialLInk "gitlabVMOnKemoNetwork")}}
+  <a target="_blank" href="https://gitlab.kemo.network/" data-original-href="https://gitlab.kemo.network/"
+    class="generatedLink">
+    <strong>{{with .Get "title"}}{{.}}{{else}}https://gitlab.kemo.network/{{end}}</strong>
+  </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
+    data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  {{ end }}
   {{else}}
   <a target="_blank" href="{{ .Get "href" }}">
     {{with .Get "title"}}{{.}}{{else}}{{.Get "href"}}{{end}}
