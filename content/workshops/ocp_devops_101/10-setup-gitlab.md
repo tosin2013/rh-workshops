@@ -65,7 +65,6 @@ We have a Cloud IDE generally set up and ready to roll, let's Setup our Gitlab u
 
     {{< rightStep size="5" >}}
 
-<p>The items from the <strong>Service Catalog</strong> are just <strong>Templates</strong> in the default <em>`openshift`</em> <strong>Project</strong>.  For the purposes of this workshop, there are additional prepared Templates to quickly deploy tools and services.</p>
 <ol>
   <li>With the SSH Key in place, use the <strong>Projects</strong> dropdown menu to select the <strong>Explore Projects</strong> link</li>
   <li>Enter the <strong>Workshop / Teleprompter</strong> repository</li>
