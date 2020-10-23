@@ -74,7 +74,7 @@ All Projects/Namespaces in a Kubernetes/OpenShift cluster must have unique names
 {{% /markdownify %}}
 
 {{< alert info >}}
-Note that the Pod may show an Err: ImagePull Backoff - this is normal and will automatically deploy once the build is complete.
+Note that the Pod may show an <strong>Err: ImagePull Backoff</strong> - this is normal and will automatically deploy once the build is complete.
 {{< /alert >}}
 
     {{< /rightStep >}}
