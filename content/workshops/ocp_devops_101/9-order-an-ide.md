@@ -28,8 +28,8 @@ Red Hat offers CodeReady Workspace which is a managed multi-user cloud-native ID
   <li>Click the blue <strong>Create Project</strong> button in the upper right of the Web Console.</li>
   <li>Create a new Project with the following details:
     <ul>
-      <li><strong>Name:</strong> ide-{{< studentNumber >}}</li>
-      <li><strong>Display Name <em>(optional)</em>:</strong> Cloud IDE</li>
+      <li><strong>Name:</strong> <code>ide-{{< studentNumber >}}</code></li>
+      <li><strong>Display Name <em>(optional)</em>:</strong> <code>Cloud IDE</code></li>
     </ul>
   </li>
   <li>Click <strong>Create</strong> to create the Project, and then find it in your listed Projects and click to enter it.</li>

@@ -30,8 +30,8 @@ You can interact with OpenShift via the CLI - to do so you need to set up the **
   <li>Click the blue <strong>Create Project</strong> button in the upper right of the Web Console.</li>
   <li>Create a new Project with the following details:
     <ul>
-      <li><strong>Name:</strong> student{{< studentNumber >}}-terminal</li>
-      <li><strong>Display Name <em>(optional)</em>:</strong> Workshop Terminal</li>
+      <li><strong>Name:</strong> <code>student{{< studentNumber >}}-terminal</code></li>
+      <li><strong>Display Name <em>(optional)</em>:</strong> <code>Workshop Terminal</code></li>
     </ul>
   </li>
   <li>Click <strong>Create</strong> to create the Project, and then find it in your listed Projects and click to enter it.</li>

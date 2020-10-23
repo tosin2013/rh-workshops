@@ -32,8 +32,8 @@ In this instance, it's an application based on the Laravel PHP Framework which h
   <li>To the right of the navigation sidebar, click the <strong>Project</strong> dropdown and click <strong>Create Project</strong></li>
   <li>Create a new Project with the following details:
     <ul>
-      <li><strong>Name:</strong> s2i-php-{{< studentNumber >}}</li>
-      <li><strong>Display Name <em>(optional)</em>:</strong> S2I PHP</li>
+      <li><strong>Name:</strong> <code>s2i-php-{{< studentNumber >}}</code></li>
+      <li><strong>Display Name <em>(optional)</em>:</strong> <code>S2I PHP</code></li>
     </ul>
   </li>
   <li>Click <strong>Create</strong> to create the Project, and then find it in your listed Projects and click to enter it.</li>

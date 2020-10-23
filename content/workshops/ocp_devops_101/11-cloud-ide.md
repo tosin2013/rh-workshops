@@ -85,7 +85,7 @@ While we won't be diving deep into Branching Strategies, Pull Requests, and othe
   <li>In the Cloud IDE terminal, run the following command to log into the OpenShift cluster via the CLI:<br /><code class="generatedText">oc login api.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN:6443</code></li>
   <li>Create a new Project:<br /><code class="generatedText">oc new-project teleprompter-VAR_REP_STUDENT_NUMBER</code></li>
   <li>Provide your SSH Key to OpenShift as a Secret so it can clone your fork:<br /><code>oc create secret generic repo-at-gitlab --from-file=ssh-privatekey=/home/coder/.ssh/id_rsa --type=kubernetes.io/ssh-auth</code></li>
-  <li>Create a new Application using the Dockerfile Build Strategy:<br /><code class="generatedText">oc new-app git@gitlab.VAR_REP_WORKSHOP_DOMAIN:studentVAR_REP_STUDENT_NUMBER/teleprompter.git --name teleprompter --strategy=docker</code></li>
+  <li>Create a new Application using the Dockerfile Build Strategy:<br /><code class="generatedText">oc new-app git@gitlab.kemo.network:studentVAR_REP_STUDENT_NUMBER/teleprompter.git --name teleprompter --strategy=docker</code></li>
   <li>Associate the Secret and Builder:<br /><code>oc set build-secret --source bc/teleprompter repo-at-gitlab</code></li>
   <li>Start a build now that it can access the repository:<br /><code>oc start-build teleprompter</code></li>
   <li>Expose the Service as a Route:<br /><code>oc expose svc/teleprompter</code></li>
