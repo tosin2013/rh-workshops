@@ -54,7 +54,7 @@ All Projects/Namespaces in a Kubernetes/OpenShift cluster must have unique names
 
     {{< rightStep size="5" >}}
 
-<blockquote>With your new S2I PHP Project created, select <strong>From Git</strong> as the Deployment Method</blockquote>
+<blockquote>With your new S2I .NET Core Project created, select <strong>From Git</strong> as the Deployment Method</blockquote>
 
     {{< /rightStep >}}
 {{< /twoSideStep >}}
@@ -74,6 +74,10 @@ All Projects/Namespaces in a Kubernetes/OpenShift cluster must have unique names
 4. Since this application is more complex and has the .NET app in a subdirectory, OpenShift can't detect the type correctly - select the ***.NET Core*** Builder Image
 5. Click the ***Create*** button
 {{% /markdownify %}}
+
+{{< alert info >}}
+Note that the Pod may show an Err: ImagePull Backoff - this is normal and will automatically deploy once the build is complete.
+{{< /alert >}}
 
     {{< /rightStep >}}
 {{< /twoSideStep >}}

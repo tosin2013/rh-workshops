@@ -73,6 +73,10 @@ All Projects/Namespaces in a Kubernetes/OpenShift cluster must have unique names
 3. Click the ***Create*** button
 {{% /markdownify %}}
 
+{{< alert info >}}
+Note that the Pod may show an Err: ImagePull Backoff - this is normal and will automatically deploy once the build is complete.
+{{< /alert >}}
+
     {{< /rightStep >}}
 {{< /twoSideStep >}}
 
@@ -95,6 +99,8 @@ All Projects/Namespaces in a Kubernetes/OpenShift cluster must have unique names
   <li>The visual explorer also has a quick link to the <strong>Git Repo</strong> used to build the application container</li>
   <li>Click the <strong>Route</strong> to open the application</li>
 </ol>
+
+<blockquote>With the PHP application open, Register as a New User and explore the application.</blockquote>
 
 {{< alert info >}}
 For the purposes of this quick demonstration, this Laravel PHP application utilizes an internally generated SQLite database, which does not lend well when scaling up Pods.
