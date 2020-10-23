@@ -24,7 +24,7 @@ While we won't be diving deep into Branching Strategies, Pull Requests, and othe
 
 <ol>
   <li>Launch the Cloud IDE that you previously provisioned and access the <strong>Terminal</strong></li>
-  <li>Run the following command to pull in your forked repository: <code class="generatedText">git clone git@gitlab.VAR_REP_WORKSHOP_DOMAIN:studentVAR_REP_STUDENT_NUMBER/teleprompter.git</code></li>
+  <li>Run the following command to pull in your forked repository: <code class="generatedText">git clone git@gitlab.kemo.network:studentVAR_REP_STUDENT_NUMBER/teleprompter.git</code></li>
 </ol>
 
     {{< /rightStep >}}
