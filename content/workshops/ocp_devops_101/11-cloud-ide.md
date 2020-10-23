@@ -102,9 +102,7 @@ While we won't be diving deep into Branching Strategies, Pull Requests, and othe
 {{< twoSideStep title="5. View in the OpenShift Web UI" >}}
     
     {{< leftStep size="7" >}}
-      {{< figureImageSet >}}
-        {{< figureImage src="../img/ocpTeleprompterBuilt.jpg" title="View the built and deployed application" >}}
-      {{< /figureImageSet >}}
+      {{< figureImage src="../img/ocpTeleprompterBuilt.jpg" title="View the built and deployed application" >}}
     {{< /leftStep >}}
 
     {{< rightStep size="5" >}}
