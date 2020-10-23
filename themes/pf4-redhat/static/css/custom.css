@@ -597,3 +597,9 @@ pre .copy-to-clipboard:hover {
 .listingblock pre:not(.highlight) {
   color: #FFF;
 }
+.pf-c-backdrop {
+  z-index: 10;
+}
+.pf-c-modal-box {
+  z-index: 200;
+}
