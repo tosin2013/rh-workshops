@@ -6,3 +6,23 @@ Steps to provision this workshop:
 4. As kubeadmin, add the workshop-terminal template to the `openshift` namespace: https://raw.githubusercontent.com/kenmoini/workshop-terminal/develop/templates/production.json
 5. As kubeadmin, add the openshift-coder-infused template to the `openshift` namespace: https://raw.githubusercontent.com/kenmoini/openshift-coder-infused/master/openshift-template.json
 6. Create a DevOps on OpenShift workshop event in Jig
+7. Import the kenmoini/teleprompter app from GitHub into a shared Workshop Group in GitLab as a Public repo
+8. Log in as every fucking user in GitLab's UI because GitLab sucks...
+
+
+Creating SSH Key secrets for deploying to OCP
+
+
+oc login api.ocp4.kemo.labs:6443
+oc new-project teleprompter-42
+oc create secret generic repo-at-gitlab --from-file=ssh-privatekey=/home/coder/.ssh/id_rsa --type=kubernetes.io/ssh-auth
+oc new-app git@gitlab.kemo.network:student42/teleprompter.git --name teleprompter --strategy=docker
+oc set build-secret --source bc/teleprompter repo-at-gitlab
+oc start-build teleprompter
+oc expose svc/teleprompter
+
+- type: GitLab
+  gitlab:
+    secret: superSecretString
+
+#oc secrets link builder repo-at-gitlab
