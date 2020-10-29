@@ -10,6 +10,9 @@ layout: lab
 This workshop curriculum has content that is adjusted based on cookies set in your browser in order to provide properly formatted resources.
 
 If you haven't done so already, please log into this workshop curriculum platform, and join the workshop specified by your proctor.
+{{% alert info %}}
+If you are already logged in and have been redirected to this workshop in doing so, please continue to the next exercise.
+{{% /alert %}}
 
 {{< twoSideStep title="1. Locate Login" >}}
 

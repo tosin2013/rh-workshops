@@ -56,3 +56,18 @@ Red Hat OpenShift provides a Web UI Console that allows you to perform various t
 <p>It will initially be blank but don't worry, we'll get to deploying some containers shortly.</p>
     {{< /rightStep >}}
 {{< /twoSideStep >}}
+
+{{< twoSideStep title="4. Switch to the Developer Console" >}}
+    
+    {{< leftStep size="7" >}}
+        {{< figureImage src="../img/switchToDeveloper.jpg" title="Use the dropdown to switch from the Administator to the Developer Console" >}}
+    {{< /leftStep >}}
+
+    {{< rightStep size="5" >}}
+
+<p>For this workshop, we'll be working out of the Developer Console.</p>
+<ol>
+  <li>In the upper-left corner of the screen, underneath the Red Hat OpenShift logo, click on the <strong>Administrator</strong> dropdown to switch to the <strong>Developer</strong> console.</li>
+</ol>
+    {{< /rightStep >}}
+{{< /twoSideStep >}}
