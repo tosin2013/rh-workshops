@@ -1,5 +1,5 @@
 ---
-title: Cloud IDE Development
+title: CI/CD - Cloud IDE Development
 workshops: ocp_devops_101
 workshop_weight: 60
 layout: lab

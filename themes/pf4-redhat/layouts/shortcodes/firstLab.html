@@ -1,0 +1,11 @@
+{{ $taxonomy := .Get 0 }}
+{{ $sortByField := "workshop_weight" }}
+
+<div class="pf-c-toolbar__item pf-m-search-filter pf-l-flex">
+  {{ range first 1 ((index $.Site.Taxonomies.workshops $taxonomy).Pages.ByParam $sortByField) }}
+  <a href="{{ .Permalink }}" class="pf-c-button pf-m-primary pf-l-flex__item pf-m-align-right" type="button"
+    id="startButton" aria-expanded="false">
+    <span>Start: {{ .Title }} →</span>
+  </a>
+  {{ end }}
+</div>

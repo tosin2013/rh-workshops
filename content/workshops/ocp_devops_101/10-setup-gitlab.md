@@ -1,5 +1,5 @@
 ---
-title: Setup GitLab
+title: CI/CD - Setup GitLab
 workshops: ocp_devops_101
 workshop_weight: 55
 layout: lab

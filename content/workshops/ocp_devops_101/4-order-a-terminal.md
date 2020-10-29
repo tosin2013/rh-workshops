@@ -2,6 +2,7 @@
 title: Order a Terminal (Optional)
 workshops: ocp_devops_101
 workshop_weight: 25
+draft: true
 layout: lab
 ---
 

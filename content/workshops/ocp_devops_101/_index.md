@@ -9,6 +9,10 @@ menu:
 
 # DevOps on Red Hat OpenShift Container Platform
 
+{{% alert info %}}
+These labs have been tailored for OpenShift v4.5
+{{% /alert %}}
+
 ## Description 
 
 Getting up and running with Kubernetes can be tough - there are a few reasons why [Kelsey Hightower's](https://twitter.com/kelseyhightower) [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) is infamous.
@@ -38,8 +42,5 @@ You will start by deploying a container from [Quay](https://quay.io/), and creat
 
 {{< labs ocp_devops_101 >}}
 
-<br>
 
-{{% alert info %}}
-These labs have been tailored for OpenShift v4.5
-{{% /alert %}}
+{{< firstLab ocp_devops_101 >}}

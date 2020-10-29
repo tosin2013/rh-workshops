@@ -1,5 +1,5 @@
 ---
-title: Order a Web IDE
+title: CI/CD - Order a Web IDE
 workshops: ocp_devops_101
 workshop_weight: 50
 layout: lab

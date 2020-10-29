@@ -1,5 +1,5 @@
 ---
-title: Webhook Triggers
+title: CI/CD - Webhook Triggers
 workshops: ocp_devops_101
 workshop_weight: 65
 layout: lab

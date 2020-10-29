@@ -1,5 +1,5 @@
 ---
-title: Scaling and Recovery
+title: CI/CD - Scaling and Recovery
 workshops: ocp_devops_101
 workshop_weight: 70
 layout: lab
