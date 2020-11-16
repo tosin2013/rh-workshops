@@ -7,7 +7,7 @@ layout: lab
 
 {{< related_assets style="grey pf-u-mt-0" >}}
   {{< related_asset title="OpenShift Cluster" specialLink="ocpCluster" >}}{{< /related_asset >}}
-  {{< related_asset title="GitLab SCM" specialLink="gitlabVMOnCluster" >}}{{< /related_asset >}}
+  {{< related_asset title="GitLab SCM" specialLink="gitlabVM" >}}{{< /related_asset >}}
 {{< /related_assets >}}
 
 OpenShift can provide native load-balancing and can scale applications across your cluster with a few simple pushes of a button.
