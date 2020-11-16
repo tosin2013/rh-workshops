@@ -147,6 +147,10 @@
 <script type="text/javascript" src="{{ "/node_modules/jquery-validation/dist/jquery.validate.min.js" }}"></script>
 <script type="text/javascript" src="{{ "/node_modules/jquery-validation/dist/additional-methods.min.js" }}"></script>
 
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js" crossorigin="anonymous"></script>
+
 <!-- loltechdebt -->
 <script type="text/javascript" src="{{ "/js/custom-kemo.js" }}"></script>
 
@@ -179,6 +183,7 @@
 
   jQuery(document).ready(function () {
     processActivity();
+
     jQuery('#eventIDModal').on('click', '.joinAvailableWorkshopBtn', function (e) {
       e.preventDefault();
       const event_eid = jQuery(this).data('event-eid');
