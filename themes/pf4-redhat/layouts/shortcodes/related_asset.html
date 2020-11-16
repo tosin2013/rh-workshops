@@ -8,15 +8,15 @@
     <strong>{{with .Get "title"}}{{.}}{{else}}https://console-openshift-console.apps.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN/{{end}}</strong>
   </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
     data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
-  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> <span class="generatedText workshopPassword" data-original-text="Provided by workshop proctor">Provided by workshop proctor</span>
   {{ end }}
   {{ if (eq $specialLInk "gitlabVM")}}
-  <a target="_blank" href="https://gitlab.VAR_REP_WORKSHOP_DOMAIN/"
-    data-original-href="https://gitlab.VAR_REP_WORKSHOP_DOMAIN/" class="generatedLink">
-    <strong>{{with .Get "title"}}{{.}}{{else}}https://gitlab.VAR_REP_WORKSHOP_DOMAIN/{{end}}</strong>
+  <a target="_blank" href="https://VAR_REP_GITLAB_FQDN/"
+    data-original-href="https://VAR_REP_GITLAB_FQDN/" class="generatedLink">
+    <strong>{{with .Get "title"}}{{.}}{{else}}https://VAR_REP_GITLAB_FQDN/{{end}}</strong>
   </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
     data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
-  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> <span class="generatedText workshopPassword" data-original-text="Provided by workshop proctor">Provided by workshop proctor</span>
   {{ end }}
   {{ if (eq $specialLInk "gitlabVMOnCluster")}}
   <a target="_blank" href="https://gitlab.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN/"
@@ -24,7 +24,7 @@
     <strong>{{with .Get "title"}}{{.}}{{else}}https://gitlab.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN/{{end}}</strong>
   </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
     data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
-  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> <span class="generatedText workshopPassword" data-original-text="Provided by workshop proctor">Provided by workshop proctor</span>
   {{ end }}
   {{ if (eq $specialLInk "gitlabVMOnKemoNetwork")}}
   <a target="_blank" href="https://gitlab.kemo.network/" data-original-href="https://gitlab.kemo.network/"
@@ -32,7 +32,7 @@
     <strong>{{with .Get "title"}}{{.}}{{else}}https://gitlab.kemo.network/{{end}}</strong>
   </a>&nbsp;&bull;&nbsp;<strong>Username:</strong> <span class="generatedText"
     data-original-text="studentVAR_REP_STUDENT_NUMBER">studentVAR_REP_STUDENT_NUMBER</span>
-  &nbsp;&bull;&nbsp;<strong>Password:</strong> Provided by workshop proctor
+  &nbsp;&bull;&nbsp;<strong>Password:</strong> <span class="generatedText workshopPassword" data-original-text="Provided by workshop proctor">Provided by workshop proctor</span>
   {{ end }}
   {{else}}
   <a target="_blank" href="{{ .Get "href" }}">

@@ -1,6 +1,12 @@
+//==========================================================================
+// Cookies2 Init
+
 if (typeof Cookies2 !== 'function') {
   var Cookies2 = Cookies.noConflict();
 }
+
+//==========================================================================
+// cleanArray fn Init
 
 if (typeof cleanArray !== 'function') {
   function cleanArray(actual) {
@@ -13,7 +19,10 @@ if (typeof cleanArray !== 'function') {
     return newArray;
   }
 }
+
+//==========================================================================
 // Gravatar Processing
+
 function getGravatarLink(email, size = 70) {
   const md5Email = md5(email.toLowerCase()).toString();
   return `https://www.gravatar.com/avatar/${md5Email}?s=${size}`;
@@ -28,10 +37,10 @@ function processGravatar(email) {
   if (email) {
     return setGravatar(getGravatarLink(email));
   }
-
   return setGravatar();
 }
 
+//==========================================================================
 // User Name Processing
 
 function setUserName(name = 'Student User') {
@@ -49,6 +58,9 @@ function hideLoadingScreen() {
     jQuery('#loadingScreen').addClass('pf-u-display-none');
   }, 250);
 }
+
+//==========================================================================
+// Cookie Processing
 
 function templateBakedCookies() {
   // Template out other Cookies...
@@ -131,23 +143,27 @@ function logStudentOut() {
   Cookies2.remove('student_id');
   const workshop_path = Cookies2.get('active_workshop_path', { path: '/' });
   console.log(`found workshop_path: ${workshop_path}`);
-  Cookies2.remove('seat_number', { path: workshop_path });
-  Cookies2.remove('userid', { path: workshop_path });
-  Cookies2.remove('domain', { path: workshop_path });
-  Cookies2.remove('prefix', { path: workshop_path });
-  Cookies2.remove('seat_number', { path: workshop_path });
-  Cookies2.remove('userid', { path: '/' });
-  Cookies2.remove('domain', { path: '/' });
-  Cookies2.remove('prefix', { path: '/' });
   Cookies2.remove('seat_number');
+  Cookies2.remove('seat_number', { path: '/' });
+  Cookies2.remove('seat_number', { path: workshop_path });
   Cookies2.remove('userid');
+  Cookies2.remove('userid', { path: '/' });
+  Cookies2.remove('userid', { path: workshop_path });
   Cookies2.remove('domain');
+  Cookies2.remove('domain', { path: '/' });
+  Cookies2.remove('domain', { path: workshop_path });
   Cookies2.remove('prefix');
+  Cookies2.remove('prefix', { path: '/' });
+  Cookies2.remove('prefix', { path: workshop_path });
+  Cookies2.remove('gitlab_fqdn');
+  Cookies2.remove('gitlab_fqdn', { path: '/' });
+  Cookies2.remove('gitlab_fqdn', { path: workshop_path });
   Cookies2.remove('active_workshop_path');
   Cookies2.remove('active_workshop_path', { path: '/' });
   Cookies2.remove('active_workshop_path', { path: workshop_path });
   Cookies2.remove('bakedCookies');
   Cookies2.remove('bakedCookies', { path: '/' });
+  Cookies2.remove('bakedCookies', { path: workshop_path });
   resetVisuals();
   if (typeof resetWorkshopFooter === 'function') {
     resetWorkshopFooter();
@@ -159,21 +175,32 @@ function replaceClassText() {
   console.log('Setting Student Number: ' + Cookies2.get("userid"));
   console.log('Setting Workshop Domain: ' + Cookies2.get("domain"));
   console.log('Setting Workshop ID: ' + Cookies2.get("prefix"));
+  console.log('Setting GitLab FQDN: ' + Cookies2.get("gitlab_fqdn"));
   jQuery("span.domain").html(Cookies2.get("domain"));
   jQuery("span.userid").html(Cookies2.get("userid"));
   jQuery("span.prefix").html(Cookies2.get("prefix"));
+  jQuery("span.prefix").html(Cookies2.get("gitlab_fqdn"));
 }
 
 function replacementSwitch(inputTxt) {
   switch (inputTxt) {
     case "VAR_REP_WORKSHOP_ID":
-      return Cookies2.get("prefix")
+      return Cookies2.get("prefix");
+    break;
     case "VAR_REP_WORKSHOP_DOMAIN":
-      return Cookies2.get("domain")
+      return Cookies2.get("domain");
+    break;
     case "VAR_REP_STUDENT_NUMBER":
-      return Cookies2.get("userid")
+      return Cookies2.get("userid");
+    break;
+    case "VAR_REP_GITLAB_FQDN":
+      return Cookies2.get("gitlab_fqdn");
+    break;
   }
 }
+
+//==========================================================================
+// Figure Group Image Processing
 
 function generatedFigureGroups() {
   jQuery('.figureImageSet.unbuilt').each(function(index, element) {
@@ -197,6 +224,9 @@ function generatedFigureGroups() {
     jQuery(this).parent().parent().parent().find('.figImageHolder figure[data-f-index-num="' + fID +'"]').addClass('active');
   });
 }
+
+//==========================================================================
+// Tab Generation Processing
 
 function generatedTabs() {
   jQuery('.tabcontainer.unbuilt').each(function(index, element) {
@@ -228,6 +258,9 @@ function generatedTabs() {
   });
 }
 
+//==========================================================================
+// Activity Processing
+
 jQuery(document).ready(function() {
   readCookiesAndSetVisual();
   replaceClassText();
@@ -241,16 +274,16 @@ jQuery(document).ready(function() {
     var searchBody = jQuery(element).html();
     var searchHref = jQuery(element).attr('data-original-href');
     var searchText = jQuery(element).attr('data-original-text');
-    jQuery(element).html(searchBody.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER/gi, function(x) {
+    jQuery(element).html(searchBody.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN/gi, function(x) {
       return replacementSwitch(x);
     }));
     if (searchHref) {
-      jQuery(element).attr('href', searchHref.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER/gi, function(x) {
+      jQuery(element).attr('href', searchHref.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN/gi, function(x) {
         return replacementSwitch(x);
       }));
     }
     if (searchText) {
-      jQuery(element).text(searchText.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER/gi, function(x) {
+      jQuery(element).text(searchText.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN/gi, function(x) {
         return replacementSwitch(x);
       }));
     }

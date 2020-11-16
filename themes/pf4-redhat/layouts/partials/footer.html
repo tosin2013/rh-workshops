@@ -64,7 +64,7 @@
     <i class="fas fa-times" aria-hidden="true"></i>
   </button>
   <form id="eventIDForm" method="POST" action="{{ .Site.Params.jigBackend }}/api/v1/access-workshop-event"
-    class="pf-c-form pf-m-horizontal" novalidate>
+    class="pf-c-form pf-m-horizontal pf-u-mr-0" novalidate>
     <header class="pf-c-modal-box__header">
       <h1 class="pf-c-modal-box__title" id="eventIDModal-title">Join Event</h1>
     </header>
@@ -160,7 +160,25 @@
     _satellite.pageBottom();
   }
 
+  function processActivity() {
+    if (Cookies2.get('student_name_id')) {
+      jQuery.ajax({
+        type: 'POST',
+        url: '{{ .Site.Params.jigBackend }}/api/v1/activity',
+        data: {
+          initiating_url: '{{ .Permalink | absURL }}',
+          activity_type: 'pageLoad',
+          student_name_id: Cookies2.get('student_name_id'),
+        },
+        complete(data) {
+          //Nada
+        },
+      });
+    }
+  }
+
   jQuery(document).ready(function () {
+    processActivity();
     jQuery('#eventIDModal').on('click', '.joinAvailableWorkshopBtn', function (e) {
       e.preventDefault();
       const event_eid = jQuery(this).data('event-eid');

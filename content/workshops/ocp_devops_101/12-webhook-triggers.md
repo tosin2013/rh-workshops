@@ -7,7 +7,7 @@ layout: lab
 
 {{< related_assets style="grey pf-u-mt-0" >}}
   {{< related_asset title="OpenShift Cluster" specialLink="ocpCluster" >}}{{< /related_asset >}}
-  {{< related_asset title="GitLab SCM" specialLink="gitlabVMOnKemoNetwork" >}}{{< /related_asset >}}
+  {{< related_asset title="GitLab SCM" specialLink="gitlabVM" >}}{{< /related_asset >}}
 {{< /related_assets >}}
 
 Now that we've explored the built application, you might want to add a new script and automatically trigger a new build when that script is pushed to our forked repository.

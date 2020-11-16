@@ -7,7 +7,7 @@ layout: lab
 
 {{< related_assets style="grey pf-u-mt-0" >}}
   {{< related_asset title="OpenShift Cluster" specialLink="ocpCluster" >}}{{< /related_asset >}}
-  {{< related_asset title="GitLab SCM" specialLink="gitlabVMOnKemoNetwork" >}}{{< /related_asset >}}
+  {{< related_asset title="GitLab SCM" specialLink="gitlabVM" >}}{{< /related_asset >}}
 {{< /related_assets >}}
 
 We have a Cloud IDE generally set up and ready to roll, let's Setup our Gitlab user
@@ -22,7 +22,7 @@ We have a Cloud IDE generally set up and ready to roll, let's Setup our Gitlab u
 
 <ol>
   <li>Use the <strong>Related Assets</strong> header above to launch this workshop's GitLab instance, or use the following link:</li>
-  {{< related_asset title="GitLab SCM" specialLink="gitlabVMOnKemoNetwork" >}}{{< /related_asset >}}
+  {{< related_asset title="GitLab SCM" specialLink="gitlabVM" >}}{{< /related_asset >}}
   <li>Note that you should use the <strong>WorkshopLDAP</strong> login provider, with the same credentials your workshop proctor provided you to use with OpenShift - all primary services are serviced by <a href="https://access.redhat.com/products/identity-management">Red Hat Identity Management</a></li>
 </ol>
 

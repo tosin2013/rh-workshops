@@ -252,22 +252,6 @@ If the gist contains several files and you want to quote just one of them, you c
 
 {{< gist dischord01 f43dbb1b2cdfc4c3802f >}}
 
-### Instagram
-
-If you'd like to embed photo from [Instagram](https://www.instagram.com/), all you need is photo ID from the URL, e. g.:
-
-* https://www.instagram.com/p/BTonNFFA7QJ/
-
-Pass it to the shortcode:
-
-    {{</* instagram BTonNFFA7QJ */>}}
-
-Optionally, hide caption:
-
-    {{</* instagram BTonNFFA7QJ hidecaption */>}}
-
-
-{{< instagram BTonNFFA7QJ >}}
 
 ## Creating your own shortcodes
 
