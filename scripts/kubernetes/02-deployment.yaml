@@ -23,7 +23,7 @@ spec:
       containers:
         - name: rh-workshops
           imagePullPolicy: Always
-          image: kenmoini/rhgov-workshops:latest
+          image: quay.io/kenmoini/rhgov-workshops:latest
           ports:
             - containerPort: 8080
               name: web
