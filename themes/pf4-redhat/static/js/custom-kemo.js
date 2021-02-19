@@ -118,8 +118,11 @@ function readCookiesAndSetVisual() {
         .next()
         .addClass('pf-u-hidden');
     }
+
     jQuery('#eventIDModalBtn').addClass('pf-u-hidden');
     jQuery('#gotoWorkshopBtn').removeClass('pf-u-hidden');
+
+    jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().addClass('pf-u-hidden');
   }
 }
 function navigateToActiveWorkshop() {
@@ -158,6 +161,9 @@ function logStudentOut() {
   Cookies2.remove('gitlab_fqdn');
   Cookies2.remove('gitlab_fqdn', { path: '/' });
   Cookies2.remove('gitlab_fqdn', { path: workshop_path });
+  Cookies2.remove('studentPassword');
+  Cookies2.remove('studentPassword', { path: '/' });
+  Cookies2.remove('studentPassword', { path: workshop_path });
   Cookies2.remove('active_workshop_path');
   Cookies2.remove('active_workshop_path', { path: '/' });
   Cookies2.remove('active_workshop_path', { path: workshop_path });
@@ -176,26 +182,31 @@ function replaceClassText() {
   console.log('Setting Workshop Domain: ' + Cookies2.get("domain"));
   console.log('Setting Workshop ID: ' + Cookies2.get("prefix"));
   console.log('Setting GitLab FQDN: ' + Cookies2.get("gitlab_fqdn"));
+  console.log('Setting Student Password: ' + Cookies2.get("studentPassword"));
   jQuery("span.domain").html(Cookies2.get("domain"));
   jQuery("span.userid").html(Cookies2.get("userid"));
   jQuery("span.prefix").html(Cookies2.get("prefix"));
   jQuery("span.prefix").html(Cookies2.get("gitlab_fqdn"));
+  if (Cookies2.get("studentPassword")){
+    jQuery("span.studentPassword").html(Cookies2.get("studentPassword"));
+  }
+  else {
+    jQuery("span.studentPassword").html('Password provided by Workshop Proctor');
+  }
 }
 
 function replacementSwitch(inputTxt) {
   switch (inputTxt) {
     case "VAR_REP_WORKSHOP_ID":
       return Cookies2.get("prefix");
-    break;
     case "VAR_REP_WORKSHOP_DOMAIN":
       return Cookies2.get("domain");
-    break;
     case "VAR_REP_STUDENT_NUMBER":
       return Cookies2.get("userid");
-    break;
     case "VAR_REP_GITLAB_FQDN":
       return Cookies2.get("gitlab_fqdn");
-    break;
+    case "VAR_REP_STUDENT_PASSWORD":
+      return Cookies2.get("studentPassword");
   }
 }
 
@@ -262,6 +273,7 @@ function generatedTabs() {
 // Activity Processing
 
 jQuery(document).ready(function() {
+  showLoadingScreen();
   readCookiesAndSetVisual();
   replaceClassText();
   generatedFigureGroups();
@@ -270,20 +282,26 @@ jQuery(document).ready(function() {
     window.location.href = jQuery('a.view-workshop-url', this).attr('href');
   });
   
-  jQuery(".generatedText, .generatedLink").each(function(index, element) {
+  jQuery(".generatedText, .generatedLink, code").each(function(index, element) {
     var searchBody = jQuery(element).html();
     var searchHref = jQuery(element).attr('data-original-href');
     var searchText = jQuery(element).attr('data-original-text');
-    jQuery(element).html(searchBody.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN/gi, function(x) {
+    var searchInnerText = jQuery(element).text();
+    jQuery(element).html(searchBody.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN|VAR_REP_STUDENT_PASSWORD/gi, function(x) {
       return replacementSwitch(x);
     }));
     if (searchHref) {
-      jQuery(element).attr('href', searchHref.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN/gi, function(x) {
+      jQuery(element).attr('href', searchHref.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN|VAR_REP_STUDENT_PASSWORD/gi, function(x) {
         return replacementSwitch(x);
       }));
     }
     if (searchText) {
-      jQuery(element).text(searchText.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN/gi, function(x) {
+      jQuery(element).text(searchText.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN|VAR_REP_STUDENT_PASSWORD/gi, function(x) {
+        return replacementSwitch(x);
+      }));
+    }
+    if (searchInnerText) {
+      jQuery(element).text(searchInnerText.replace(/VAR_REP_WORKSHOP_ID|VAR_REP_WORKSHOP_DOMAIN|VAR_REP_STUDENT_NUMBER|VAR_REP_GITLAB_FQDN|VAR_REP_STUDENT_PASSWORD/gi, function(x) {
         return replacementSwitch(x);
       }));
     }
@@ -360,4 +378,6 @@ jQuery(document).ready(function() {
           });
       }
   });
+
+  hideLoadingScreen();
 });

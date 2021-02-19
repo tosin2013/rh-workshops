@@ -35,9 +35,9 @@
   &nbsp;&bull;&nbsp;<strong>Password:</strong> <span class="generatedText workshopPassword" data-original-text="Provided by workshop proctor">Provided by workshop proctor</span>
   {{ end }}
   {{else}}
-  <a target="_blank" href="{{ .Get "href" }}">
+  {{with .Get "href" }}<a target="_blank" href="{{.}}" data-original-href="{{.}}" class="generatedLink">{{else}}<strong>{{end}}
     {{with .Get "title"}}{{.}}{{else}}{{.Get "href"}}{{end}}
-  </a>
+  {{with .Get "href" }}</a>{{else}}</strong>{{end}}
   {{with .Inner}}{{.}}{{end}}
   {{end}}
 </li>

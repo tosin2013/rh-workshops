@@ -254,6 +254,9 @@ small,
 }
 .pf-c-page__main-section-content ul {
   list-style: square inside;
+  padding:0.5rem 1rem;
+}
+.stepHolders ul, .stepHolders ol {
   padding-left:1.5rem;
   padding-bottom: 1rem;
 }
@@ -413,6 +416,7 @@ figure.img-figure.kemo-figure:hover {
 .figCountWideHolder {
     width:100%;
     float:left;
+    margin-bottom: 2rem;
 }
 .figImageHolder figure.img-figure.kemo-figure {
     margin:1rem auto 2rem;
@@ -541,6 +545,8 @@ pre {
   border: 0;
   border-radius: 2px;
   line-height: 1.15;
+  position: relative;
+  overflow: auto;
 }
 pre code {
   color: whitesmoke;
@@ -551,7 +557,12 @@ pre code {
   margin: 0;
   font-size: 15px;
 }
-
+code.language-output {
+  font-weight: normal;
+}
+code.language-output + span.copy-to-clipboard {
+  display: none;
+}
 .copy-to-clipboard {
   background-image: url(/img/clippy.svg);
   background-position: 50% 50%;
@@ -605,4 +616,7 @@ pre .copy-to-clipboard:hover {
 }
 .pf-c-modal-box {
   z-index: 200;
+}
+hr {
+  margin:2rem 0;
 }
