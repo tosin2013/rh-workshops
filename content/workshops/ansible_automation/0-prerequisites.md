@@ -16,4 +16,4 @@ This workshop is done entirely through the browser, the rest of your environment
 If you would like to create your own environment to replicate this workshop, what you need is:
 
 - A [Red Hat Ansible Automation Platform](https://www.redhat.com/en/technologies/management/ansible/try-it) subscription
-- 4 Nodes per seat - setting up the environment can be aided by the ***ws-ansible-automation-tf*** Role in the [Blue Forge](https://github.com/kenmoini/blue-forge) repository
+- 3 Nodes per seat, one being Ansible Tower - setting up the environment can be aided by the ***ws-ansible-automation-tf*** Role in the [Blue Forge](https://github.com/kenmoini/blue-forge) repository
