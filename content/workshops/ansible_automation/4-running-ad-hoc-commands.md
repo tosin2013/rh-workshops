@@ -76,13 +76,6 @@ The result should look like this:
 
 ```output
 [student{{< studentNumber >}}@student{{< studentNumber >}}-tower workshop]$ ansible nodes -m ping
-student{{< studentNumber >}}-node3 | SUCCESS => {
-    "ansible_facts": {
-        "discovered_interpreter_python": "/usr/libexec/platform-python"
-    },
-    "changed": false,
-    "ping": "pong"
-}
 student{{< studentNumber >}}-node2 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/libexec/platform-python"
@@ -124,8 +117,6 @@ ansible all -m command -a 'uptime' -o
 
 ```output
 [student{{< studentNumber >}}@student{{< studentNumber >}}-tower workshop]$ ansible all -m command -a 'uname -a' -o
-student{{< studentNumber >}}-node3 | CHANGED | rc=0
-Linux student{{< studentNumber >}}-node3 4.18.0-240.15.1.el8_3.x86_64 #1 SMP Wed Feb 3 03:12:15 EST 2021 x86_64 x86_64 x86_64 GNU/Linux
 student{{< studentNumber >}}-node2 | CHANGED | rc=0
 Linux student{{< studentNumber >}}-node2 4.18.0-240.15.1.el8_3.x86_64 #1 SMP Wed Feb 3 03:12:15 EST 2021 x86_64 x86_64 x86_64 GNU/Linux
 student{{< studentNumber >}}-node1 | CHANGED | rc=0
@@ -142,7 +133,6 @@ ansible all -m command -a 'uptime' -o
 
 ```output
 [student{{< studentNumber >}}@student{{< studentNumber >}}-tower workshop]$ ansible all -m command -a 'uptime' -o
-student{{< studentNumber >}}-node3 | CHANGED | rc=0 | (stdout)  14:45:12 up  5:41,  1 user,  load average: 0.00, 0.00, 0.00
 student{{< studentNumber >}}-node2 | CHANGED | rc=0 | (stdout)  14:45:12 up  5:41,  1 user,  load average: 0.00, 0.00, 0.00
 student{{< studentNumber >}}-node1 | CHANGED | rc=0 | (stdout)  14:45:12 up  5:41,  1 user,  load average: 0.02, 0.03, 0.00
 student{{< studentNumber >}}-tower | CHANGED | rc=0 | (stdout)  14:45:12 up  5:41,  1 user,  load average: 0.17, 0.16, 0.06

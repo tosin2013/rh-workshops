@@ -74,7 +74,7 @@ As the normal User, you can view the execution of the Workflow Template after it
 - Once you see a Finished and Successful Workflow Template, you can proceed to test the container deployment
 - Navigate to:
 
-  `http://studentVAR_REP_STUDENT_NUMBER-node3.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN:8080/`
+  `http://studentVAR_REP_STUDENT_NUMBER-node2.VAR_REP_WORKSHOP_ID.VAR_REP_WORKSHOP_DOMAIN:8080/`
 
 - Marvel at your awesome automation!
 {{% /markdownify %}}

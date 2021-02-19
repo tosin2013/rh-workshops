@@ -16,12 +16,11 @@ As a workshop student you'll interact with two different interface - a VSCode in
 
 In this workshop you operate in a pre-configured lab environment.  You will have access to the following hosts:
 
-| Role                       | Inventory Name                     | Inventory Groups | Hostname                                                                               |
-| -------------------------- | ---------------------------------- | ---------------- | -------------------------------------------------------------------------------------- |
-| Ansible Control/Tower Node | student{{< studentNumber >}}-tower | tower            | student{{< studentNumber >}}-tower.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
-| Managed Host 1             | student{{< studentNumber >}}-node1 | nodes, web       | student{{< studentNumber >}}-node1.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
-| Managed Host 2             | student{{< studentNumber >}}-node2 | nodes, db        | student{{< studentNumber >}}-node2.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
-| Managed Host 3             | student{{< studentNumber >}}-node3 | nodes, container | student{{< studentNumber >}}-node3.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
+| Role                       | Inventory Name                     | Inventory Groups     | Hostname                                                                               |
+| -------------------------- | ---------------------------------- | -------------------- | -------------------------------------------------------------------------------------- |
+| Ansible Control/Tower Node | student{{< studentNumber >}}-tower | tower                | student{{< studentNumber >}}-tower.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
+| Managed Host 1             | student{{< studentNumber >}}-node1 | nodes, web           | student{{< studentNumber >}}-node1.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
+| Managed Host 2             | student{{< studentNumber >}}-node2 | nodes, db, container | student{{< studentNumber >}}-node2.{{< span_workshopID >}}.{{< span_workshopDomain >}} |
 
 
 {{< twoSideStep title="1. Launch VS Code" >}}
