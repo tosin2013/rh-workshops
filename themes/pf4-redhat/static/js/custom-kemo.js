@@ -122,7 +122,24 @@ function readCookiesAndSetVisual() {
     jQuery('#eventIDModalBtn').addClass('pf-u-hidden');
     jQuery('#gotoWorkshopBtn').removeClass('pf-u-hidden');
 
+    // Hide Workshop Setup nav if already configured
     jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().addClass('pf-u-hidden');
+    // Pagination Link Skip fix
+    var prevSetupLinkText = jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().prev().find('a').text();
+    var prevSetupLink = jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().prev().find('a');
+    var nextSetupLink = jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().next().find('a');
+    const prevSetupLinkClass = jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().prev().find('a').hasClass('pf-m-current');
+    const nextSetupLinkClass = jQuery("#page-expandable-nav-example-expandable-nav li a:contains('Workshop Setup & Configuration')").parent().next().find('a').hasClass('pf-m-current');
+    prevSetupLinkText = prevSetupLinkText.trim();
+    if (prevSetupLinkClass) {
+      jQuery('.pagination-toolbar .pf-u-float-right a').attr('href', nextSetupLink.attr('href'));
+      jQuery('.pagination-toolbar .pf-u-float-right a span').html("Next: " + nextSetupLink.text() + " &rarr;");
+    }
+    if (nextSetupLinkClass) {
+      jQuery('.pagination-toolbar .pf-u-float-left a').attr('href', prevSetupLink.attr('href'));
+      jQuery('.pagination-toolbar .pf-u-float-left a span').html("&larr; Previous: " + prevSetupLink.text());
+    }
+    console.log(prevSetupLinkText);
   }
 }
 function navigateToActiveWorkshop() {
