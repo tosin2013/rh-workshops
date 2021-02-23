@@ -7,27 +7,25 @@
 > This warning will be removed once we have settled on a reasonable set of
 > guidelines for contributions.
 
-### 1 Fork the RedHatGov.io repo
+### 1 Fork the rh-workshops repo
 
-Forking RedHatGov.io is a simple two-step process.
+Forking rh-workshops is a simple two-step process.
 
-1. On GitHub, navigate to the https://github.com/RedHatGov/redhatgov.github.io
-repo.
+1. On GitHub, navigate to the https://github.com/kenmoini/rh-workshops repo.
 2. In the top-right corner of the page, click **Fork**.
 
-That's it! Now, you have a [fork][git-fork] of the original RedHatGov/redhatgov.github.io
-repo.
+That's it! Now, you have a [fork][git-fork] of the original kenmoini/rh-workshops repo.
 
 ### 2 Create a local clone of your fork
 
-Right now, you have a fork of the RedHatGov.io repo, but you don't have the files in that repo on your computer. Let's create a [clone][git-clone] of your fork locally on your computer.
+Right now, you have a fork of the rh-workshops repo, but you don't have the files in that repo on your computer. Let's create a [clone][git-clone] of your fork locally on your computer.
 
 ```sh
-git clone git@github.com:your-username/redhatgov.github.io.git
-cd redhatgov.github.io
+git clone git@github.com:YOUR-USERNAME/rh-workshops
+cd rh-workshops
 
 # Configure git to sync your fork with the original repo
-git remote add upstream https://github.com/RedHatGov/redhatgov.github.io
+git remote add upstream https://github.com/kenmoini/rh-workshops
 
 # Never push to upstream repo
 git remote set-url --push upstream no_push
@@ -39,32 +37,32 @@ To verify the new upstream repo you've specified for your fork, type
 `git remote -v`. You should see the URL for your fork as `origin`, and the URL for the original repo as `upstream`.
 
 ```sh
-origin  git@github.com:your-username/redhatgov.github.io.git (fetch)
-origin  git@github.com:your-username/redhatgov.github.io.git (push)
-upstream        https://github.com/RedHatGov/redhatgov.github.io (fetch)
+origin  git@github.com:YOUR-USERNAME/rh-workshops.git (fetch)
+origin  git@github.com:YOUR-USERNAME/rh-workshops.git (push)
+upstream        https://github.com/kenmoini/rh-workshops (fetch)
 upstream        no_push (push)
 ```
 
-### 4 Modify your `docs`
+### 4 Modify your `main` branch
 
-Get your local `docs` [branch][git-branch], up to date:
-
-```sh
-git fetch upstream
-git checkout docs
-git merge upstream/docs
-```
-
-Then build your local `docs` branch, make changes, etc.
-
-### 5 Keep your `docs` in sync
+Get your local `main` [branch][git-branch], up to date:
 
 ```sh
 git fetch upstream
-git merge upstream/docs
+git checkout main
+git merge upstream/main
 ```
 
-### 6 [Commit][git-commit] your `docs`
+Then build your local `main` branch, make changes, etc.
+
+### 5 Keep your `main` branch in sync
+
+```sh
+git fetch upstream
+git merge upstream/main
+```
+
+### 6 [Commit][git-commit] your `main` branch
 
 ```sh
 git commit
@@ -72,10 +70,9 @@ git commit
 
 Likely you'll go back and edit, build, test, etc.
 
-### 7 [Push][git-push] your `docs`
+### 7 [Push][git-push] your `main` branch
 
-When ready to review (or just to establish an offsite backup of your work),
-push your branch to your fork on `github.com`:
+When ready to review (or just to establish an offsite backup of your work), push your branch to your fork on `github.com`:
 
 ```sh
 git push
@@ -83,16 +80,12 @@ git push
 
 ### 8 Submit a [pull request][pr]
 
-1. Visit your fork at https://github.com/your-username/redhatgov.github.io.git
-2. Click the `Compare & Pull Request` button next to your `docs` branch.
+1. Visit your fork at https://github.com/YOUR-USERNAME/rh-workshops.git
+2. Click the `Compare & Pull Request` button next to your `main` branch.
 
-At this point you're waiting on us. We may suggest some changes or improvements
-or alternatives. We'll do our best to review and at least comment within 3
-business days (often much sooner).
+At this point you're waiting on us. We may suggest some changes or improvements or alternatives. We'll do our best to review and at least comment within 3 business days (often much sooner).
 
-_If you have upstream write access_, please refrain from using the GitHub UI
-for creating PRs, because GitHub will create the PR branch inside the main
-repo rather than inside your fork.
+_If you have upstream write access_, please refrain from using the GitHub UI for creating PRs, because GitHub will create the PR branch inside the main repo rather than inside your fork.
 
 [git-fork]: https://help.github.com/articles/fork-a-repo/
 [git-clone]: https://git-scm.com/docs/git-clone
@@ -100,4 +93,4 @@ repo rather than inside your fork.
 [git-branch]: https://git-scm.com/docs/git-branch
 [git-commit]: https://git-scm.com/docs/git-commit
 [git-push]: https://git-scm.com/docs/git-push
-[pr]: https://github.com/RedHatGov/redhatgov.github.io/compare/
+[pr]: https://github.com/kenmoini/rh-workshops/compare/

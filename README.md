@@ -67,6 +67,8 @@ Navigate your browser to http://localhost:1313 to access the workshop curriculum
 
 ***NOTE***: You will still need to modify the `config.toml` file to match a deployed Jig backend in order to access the functions of logins, activity analysis, and workshop auto-configuration.  Jig can also be [deployed locally](https://github.com/kenmoini/jig#how-to-use).
 
+---
+
 ### Deployment as a Container Image
 
 In the root of this repository, you'll find a `Dockerfile` which can be used to build a container image:
@@ -83,6 +85,8 @@ Navigate your browser to http://localhost:8080 to access the running container.
 ```javascript
 const jigBackendEndpoint = "https://jig.example.com"
 ```
+
+---
 
 ### Deployment to Kubernetes
 
@@ -146,7 +150,14 @@ spec:
                 path: "jig-backend-override.js"
 ```
 
+---
+
+## New Workshop Development
+
+*Coming soon...*
+
+---
+
 ## Contributing
 
-If you have content that you'd like to contribute, check out the
-[contribution guidelines for this project](CONTRIBUTING.md).
+If you have content that you'd like to contribute, check out the [contribution guidelines for this project](CONTRIBUTING.md).
