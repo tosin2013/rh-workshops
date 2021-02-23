@@ -61,7 +61,7 @@ Now that we have everything set up, let us execute this automation as a user - r
     
     {{< leftStep size="7" >}}
       {{< figureImageSet >}}
-        {{< figureImage src="../img/ansibleTowerFinishedWorkflow.jpg" title="As the Admin, click on the Notification bell" >}}
+        {{< figureImage src="../img/ansibleTowerFinishedWorkflow.jpg" title="As your User, navigate back to your Job" >}}
         {{< figureImage src="../img/ansibleTowerInfiniteMario.jpg" title="Play some Mario!" >}}
       {{< /figureImageSet >}}
     {{< /leftStep >}}
