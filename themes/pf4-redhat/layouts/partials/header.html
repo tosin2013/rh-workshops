@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="{{ .Scratch.Get "BodyClass" | default "" }}">
+<body class="{{ .Scratch.Get "BodyClass" | default "" }} {{ .Scratch.Get "pageLoading" | default "" }}">
 
   <body>
     <div id="___gatsby">

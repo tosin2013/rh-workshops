@@ -290,7 +290,7 @@ function generatedTabs() {
 // Activity Processing
 
 jQuery(document).ready(function() {
-  showLoadingScreen();
+  //showLoadingScreen();
   readCookiesAndSetVisual();
   replaceClassText();
   generatedFigureGroups();
