@@ -21,8 +21,7 @@
   <button class="pf-c-button pf-m-plain" type="button" aria-label="Close">
     <i class="fas fa-times" aria-hidden="true"></i>
   </button>
-  <form id="studentLoginForm" method="POST" action="{{ .Site.Params.jigBackend }}/api/v1/student-login"
-    class="pf-c-form pf-m-horizontal" novalidate>
+  <form id="studentLoginForm" method="POST" action="" class="pf-c-form pf-m-horizontal" novalidate>
     <header class="pf-c-modal-box__header">
       <h1 class="pf-c-modal-box__title" id="studentLoginModal-title">Student Login</h1>
     </header>
@@ -63,8 +62,7 @@
   <button class="pf-c-button pf-m-plain" type="button" aria-label="Close">
     <i class="fas fa-times" aria-hidden="true"></i>
   </button>
-  <form id="eventIDForm" method="POST" action="{{ .Site.Params.jigBackend }}/api/v1/access-workshop-event"
-    class="pf-c-form pf-m-horizontal pf-u-mr-0" novalidate>
+  <form id="eventIDForm" method="POST" action="" class="pf-c-form pf-m-horizontal pf-u-mr-0" novalidate>
     <header class="pf-c-modal-box__header">
       <h1 class="pf-c-modal-box__title" id="eventIDModal-title">Join Event</h1>
     </header>
@@ -154,7 +152,12 @@
 <!-- loltechdebt -->
 <script type="text/javascript" src="{{ "/js/custom-kemo.js" }}"></script>
 
+<script type="text/javascript">
+  const jigBackendEndpoint = "{{ .Site.Params.jigBackend }}";
+</script>
 
+<!-- jigBackendEndpoint Override -->
+<script type="text/javascript" src="{{ "/js/container/jig-backend-override.js" }}"></script>
 
 <script type="text/javascript">
   if (
@@ -168,7 +171,7 @@
     if (Cookies2.get('student_name_id')) {
       jQuery.ajax({
         type: 'POST',
-        url: '{{ .Site.Params.jigBackend }}/api/v1/activity',
+        url: jigBackendEndpoint + '/api/v1/activity',
         data: {
           initiating_url: '{{ .Permalink | absURL }}',
           activity_type: 'pageLoad',
@@ -201,7 +204,7 @@
         );
         jQuery.ajax({
           type: 'GET',
-          url: '{{ .Site.Params.jigBackend }}/api/v1/find-available-events',
+          url: jigBackendEndpoint + '/api/v1/find-available-events',
           error(data) {
             jQuery('#availableEventsListingTable tbody').html(
               '<tr role="row"><td colspan="5" class="pf-u-text-align-center">Error loading records</td></tr>'
@@ -262,7 +265,7 @@
       showLoadingScreen();
       jQuery.ajax({
         type: 'POST',
-        url: '{{ .Site.Params.jigBackend }}/api/v1/activity',
+        url: jigBackendEndpoint + '/api/v1/activity',
         data: {
           initiating_url: '{{ .Permalink | absURL }}',
           activity_type: 'logout',
@@ -301,7 +304,7 @@
         submitHandler(form) {
           jQuery.ajax({
             type: 'POST',
-            url: form.action,
+            url: jigBackendEndpoint + '/api/v1/student-login',
             data: jQuery('#studentLoginForm').serialize(),
             success(data) {
               if (data.code == 'student-logged-in') {
@@ -359,7 +362,7 @@
         submitHandler(form) {
           jQuery.ajax({
             type: 'POST',
-            url: form.action,
+            url: jigBackendEndpoint + '/api/v1/access-workshop-event',
             data: {
               initiating_url: jQuery(
                 "#eventIDForm input[name='initiating_url']"

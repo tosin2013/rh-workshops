@@ -36,7 +36,7 @@ jobs:
       run: docker push ${{ secrets.CONTAINER_NAME }}:latest
     
     - name: Update deployment file
-      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|quay.io/kenmoini/rhgov-workshops:latest|'${{ secrets.CONTAINER_NAME }}':'${TAG}'|' $GITHUB_WORKSPACE/scripts/kubernetes/02-deployment.yaml
+      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|quay.io/kenmoini/rh-workshops:latest|'${{ secrets.CONTAINER_NAME }}':'${TAG}'|' $GITHUB_WORKSPACE/scripts/kubernetes/02-deployment.yaml
 
 #    - name: Update deployment file
 #      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|registry.digitalocean.com/asb/static-example:'${TAG}'|' $GITHUB_WORKSPACE/config/deployment.yml
