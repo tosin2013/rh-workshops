@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  labels:
+    app: rh-workshops
+    app.kubernetes.io/name: rh-workshops
+    app.kubernetes.io/part-of: rh-workshops
+  name: rh-workshops-svc
+  namespace: rh-workshops
+spec:
+  port:
+    targetPort: web
+  to:
+    kind: Service
+    name: rh-workshops-svc
+    weight: 100
+  wildcardPolicy: None

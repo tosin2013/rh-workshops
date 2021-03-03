@@ -151,6 +151,51 @@ spec:
 ```
 
 ---
+## Deploy using kustomize
+### Install kustomize
+[kustomize](https://kubernetes-sigs.github.io/kustomize/installation/)
+```bash
+$ curl -s "https://raw.githubusercontent.com/\
+kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+$ sudo mv kustomize /usr/local/bin/
+```
+
+### Deploy to kubernetes using kustomize 
+
+**Validate Configs**
+```bash
+kustomize build scripts/overlay/kubernetes/ | less
+```
+
+**Deploy**
+```bash
+kustomize build scripts/overlay/kubernetes/ | kubectl create -f -
+```
+
+**Delete deployment**
+```bash
+kustomize build scripts/overlay/kubernetes/ | kubectl delete -f -
+```
+
+
+### Deploy to OpenShift using kustomize
+**Validate Configs**
+```bash
+kustomize build scripts/overlay/openshift/ | less
+```
+
+**Deploy**
+```bash
+kustomize build scripts/overlay/openshift/ | oc create -f -
+```
+
+**Delete deployment**
+```bash
+kustomize build scripts/overlay/openshift/ | oc delete -f -
+```
+
+
+---
 
 ## New Workshop Development
 
